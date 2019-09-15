@@ -1,0 +1,35 @@
+
+      <div id="wrapper">
+		<form id="streamform" name="s" method="post" onsubmit="AssociateStreamers();" style="margin-bottom: -20px;">
+		<input type="text" name="s" id="streamname" style="display:inline-block;padding:0 0 !important;" placeholder="letsplaytk,fursforlife" /> 
+		<input type="submit" style="height:58px;" value="Let's Watch"/>
+		</form>
+         <div id="streams" style="width: 100% !important;padding-top: 7px;">
+            <script>if(c===""){$("#helpbox").css("display","block")} else{v.forEach(function(e){z=v.indexOf(e)+1,z<10?$('#streams').append('<iframe id="screen'+z+'" src="https://player.twitch.tv/?muted=true&channel='+e+'" class="stream" allowfullscreen="true" style="height:768px;width:20%;"></iframe>'):(console.log("Error: Max Screen limit reached"),optimize_size(oSize-1))});}</script>
+         </div>
+		 <div id="chatbox" class="ui-tabs ui-widget ui-widget-content ui-corner-all">
+			<ul id="tablist" class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
+				<script>v.forEach(function(e){$('#tablist').prepend('<li class="ui-state-default ui-corner-top tabsforchat" id="tab_'+e+'"><a href="#chat-'+e+'" onclick="chat(\''+e+'\'); return false" class="ui-tabs-anchor">'+e+'</a></li>');});</script>
+			</ul>	
+			<script>v.forEach(function(e){$('#chatbox').append('<div id="chat-'+e+'" class="stream_chat ui-tabs-panel ui-widget-content ui-corner-bottom chatcanvas"><iframe frameborder="0" scrolling="no" id="chat-'+e+'-embed" src="https://www.twitch.tv/embed/'+e+'/chat?darkpopout" height="100%" width="100%"></iframe></div>');});</script>
+		</div>
+         <div id="helpbox" style="position: absolute; left: 651.5px; top: 356px; display: none;">
+            <h1>MultiCam</h1>
+            <div id="helptext">
+               Multicam is a dynamic page capable of delivering multiple Twitch Streams Live to your screen in one showing. YouTube Support is coming soon.
+			   To begin, enter the streamers names below
+			   <input type="text" placeholder="twitchpresents,pokemon" />
+			   <input type="submit" value="Let's Watch" />
+            </div>
+            <div id="credits">
+               Based on MultiTwitch with a difference.
+            </div>
+         </div>		 
+      </div>
+       <script>
+	      $(document).ready(function(){
+	          // Force resize once!
+                optimize_size(-1);
+	      });
+	  </script>
+ 
